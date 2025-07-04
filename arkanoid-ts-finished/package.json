@@ -1,0 +1,17 @@
+{
+  "name": "arkanoid-ts",
+  "version": "1.0.0",
+  "description": "Arkanoid game with TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "dependencies": {
+    "ethers": "^5.7.2"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "typescript": "^4.9.5"
+  }
+}

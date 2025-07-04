@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Typescript App</title>
+    <title>Arkanoid Game</title>
   </head>
   <body>
     <div id="main" class="main">
@@ -12,6 +12,15 @@
         <div id="score"></div>
         <button id="start">Start</button>
         <div id="info">Press play!</div>
+      </div>
+      
+      <!-- Leaderboard Section -->
+      <div id="leaderboard" class="leaderboard">
+        <h2>Leaderboard</h2>
+        <div id="leaderboard-content">
+          <p>Connect your wallet to view scores</p>
+        </div>
+        <button id="connect-wallet">Connect Wallet</button>
       </div>
     </div>
     <script src="./index.ts"></script>
@@ -54,6 +63,62 @@
     #score,
     #info {
       width: 200px;
+    }
+    
+    /* Leaderboard Styles */
+    .leaderboard {
+      position: absolute;
+      top: 620px;
+      width: var(--width);
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 15px;
+      margin-top: 20px;
+    }
+    
+    .leaderboard h2 {
+      font-size: 24px;
+      margin-top: 0;
+      text-align: center;
+    }
+    
+    #leaderboard-content {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    
+    #leaderboard-content table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    #leaderboard-content th, #leaderboard-content td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    #leaderboard-content th {
+      background-color: #f2f2f2;
+    }
+    
+    #connect-wallet {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 10px 0;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    
+    #connect-wallet:hover {
+      background-color: #45a049;
     }
   </style>
 </html>
