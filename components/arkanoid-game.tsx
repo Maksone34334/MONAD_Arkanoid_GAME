@@ -10,6 +10,7 @@ import { Collision } from "@/lib/arkanoid/Collision"
 import { PADDLE_SPEED, PADDLE_WIDTH, PADDLE_HEIGHT, BALL_SPEED, BALL_SIZE } from "@/lib/arkanoid/setup"
 import { createBricks } from "@/lib/arkanoid/helpers"
 import { leaderboardContract } from "@/lib/contract"
+import LeaderboardTable from "./leaderboard-table"
 import { Button } from "./ui/button"
 import { Loader2, CheckCircle, AlertTriangle, Save, Play, RotateCcw } from "lucide-react"
 
@@ -200,7 +201,7 @@ export default function ArkanoidGame() {
   }
 
   return (
-    <>
+    <div className="relative">
       <canvas
         ref={canvasRef}
         id="playField"
@@ -212,14 +213,11 @@ export default function ArkanoidGame() {
         id="display"
         className="absolute bottom-0 left-0 w-full h-[60px] flex justify-between items-center px-4 bg-gray-800 z-20"
       >
-        <div id="score" className="w-32 text-lg font-bold">
-          Score: {score}
-        </div>
+        <div id="score" className="w-32 text-lg font-bold">Score: {score}</div>
         <div className="flex-1 flex justify-center">{renderGameControls()}</div>
-        <div id="info" className="w-32 text-lg text-right font-bold">
-          {infoText}
-        </div>
+        <div id="info" className="w-32 text-lg text-right font-bold">{infoText}</div>
       </div>
-    </>
+      <LeaderboardTable />
+    </div>
   )
 }
